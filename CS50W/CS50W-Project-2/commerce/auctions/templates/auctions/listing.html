@@ -1,0 +1,104 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="listing-body">
+<h1> Listing: {{listing}} </h1>
+
+{% if not watchlisted %}
+<form action="{% url 'addwatchlist' listing.slug %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Add to Watchlist" class="watchlist-button">
+</form>
+{% else %}
+<form action="{% url 'remwatchlist' listing.slug %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Remove from Watchlist" class="watchlist-button">
+</form>
+{% endif %}
+<div class="image-listing-container">
+{% if listing.image %}<img src={{listing.image}} class="stretchy">{% endif %}
+</div>
+<h5> {{ listing.description }}</h5>
+
+{% if listing.current_bid.value != None %}
+<h2>${{ listing.current_bid.value }}</h2>
+{% else %}
+<h2>${{ listing.initial_bid }}
+</h2>
+{% endif %} 
+
+{% if message %}
+<p class="message">{{ message }}</p>
+{% endif %}
+
+{% if number_bids > 0 %}
+{{ number_bids }} bid(s) so far. {% if user == listing.current_bid.bidder %}Your bid is the current bid. {% else %} {{ listing.current_bid.bidder }} has the current bid.{% endif %}
+{% endif %}
+
+{% if user.is_authenticated and user != listing.vendor and listing.active %}
+<div >
+<form action="{% url 'addbid' listing.slug %}" method="post" class="bid-form">
+    {{ Bid_Form }}
+    {% csrf_token %}
+    <input type="submit" value="Place Bid" class="place-bid-button">
+</form>
+</div>
+{% endif %}
+<div class="details-container">
+<h5>Details:</h5>
+<ul>
+    <li> Listed by: {{ listing.vendor }}</li>
+    <li>{{ listing.description }}</li>
+    <li>Category:{% if listing.category %} listing.category {% else %} no category listed {% endif %}</li>
+    <li>Created on: {{listing.created_on}}</li>
+</ul>
+</div>
+
+
+{% if user.is_authenticated and user != listing.vendor and listing.active == False and user == listing.current_bid.bidder %}
+<div class="close-wrapper"> You've won this auction! Your bid was {{ listing.current_bid.value }}. </div>
+{% endif %}
+
+{% if user == listing.vendor and listing.active %}
+<div class="close-wrapper">
+This is your listing. {% if listing.current_bid == None %} There are no bids so far. {% else  %} The highest bid so far is {{ listing.current_bid.value }} by user {{ listing.current_bid.bidder }}. {% endif %}
+Do you wish to close it?
+<form action="{% url 'close_listing' listing.slug %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Close this bid" class="close-button">
+</form>
+</div>
+{% endif %}
+
+{% if user == listing.vendor and listing.active == False %}
+
+You closed this listing. {% if listing.current_bid.bidder %}The highest bidder was {{ listing.current_bid.bidder }}, for {{ listing.current_bid.value }} {%else%} There was no bids. {%endif%}
+
+{% endif %}
+
+
+
+{% if comments %}
+<div class="comment-wrapper">
+{% for comment in comments %}
+<div class="comment">
+    
+    <h1>{{comment.user}}</h1>
+    <h2>{{comment.created_on}}</h2>
+    <p>{{comment}}</p>
+</div>
+{% endfor%}
+</div>
+{% endif %}
+
+{% if user.is_authenticated %}
+<div class="add-comment-wrapper">
+<form action="{% url 'addcomment' listing.slug %}" method="post">
+    {% csrf_token %}
+    {{ Comment_Form}}
+    <input type="submit" value="Comment" class="comment-button">
+</form>
+</div>
+{% endif %}
+</div>
+{% endblock %}

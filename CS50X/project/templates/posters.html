@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+posters for {{ details['name'] }}
+{% endblock %}
+
+{% block main %}
+
+<div align="center" id="carousel_div">
+    {% if filmography | length == 0 %}
+    <p></p>
+    <h6>No results :(</h6>
+    <p></p>
+    {% endif %}
+    <div id="carouselExampleRide" class="carousel slide carousel-fade">
+        {% set ns = namespace(found=true) %}
+        {% for keys in filmography %}
+        {% for movie in filmography[keys] if not movie['poster_path'] ==
+        "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
+        %}
+        <div class="carousel-item {% if ns.found == true %}active{% endif %}">
+            <img id="posters" src="{{ movie['poster_path'] }}" alt="{{ movie['overview'] }}" class="responsive">
+            <div class="carousel-caption">
+                <h5 style="text-align: center;"><a href="/movie?m={{ movie['id'] }}" style="font-weight: bold;">{{
+                        movie['title'] }}</a></h5>
+                <p>{{ movie['overview'] }}</p>
+                <p style="font-weight: bold; font-size: smaller; text-align: center"> Release date:
+                    {{movie['release_date'] }}. <br> <a href="/artist?p={{ details['id'] }}">{{ details['name'] }}
+                    </a> is credited in this title as "{{ keys | lower }}"{% if keys == 'cast' %}
+                    {% if details['gender'] == 2 %} (actor, as self or presented) {% elif details['gender'] == 1 %}
+                    (actress, as self or presented) {% else %} {%
+                    endif %}{% endif %}. </p>
+            </div>
+        </div>
+        {% set ns.found = false %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+{% endblock %}

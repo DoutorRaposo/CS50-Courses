@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: It is much slower on reversed file, but really fast if the file is already sorted, because the individual comparisons don't need swaps and doesn't need more than one full pass.
+
+sort2 uses: Merge sort
+
+How do you know?: It is significantly faster than the other two with large data set, consistent times if tested with different types of files (random, reversed or sorted), and that is because it divides arrays even if in order.
+
+sort3 uses: Selection sort
+
+How do you know?: It is slower in larger data sets and independent of the type of file (reversed, sorted or random) and this program maintain a consistent timing and that it's because it requires full passes even if already sorted.

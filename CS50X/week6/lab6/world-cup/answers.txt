@@ -1,0 +1,21 @@
+Times:
+
+10 simulations: 0m0.029s
+100 simulations: 0m0.031s
+1000 simulations: 0m0.029s
+10000 simulations: 0m0.103s
+100000 simulations: 0m0.839s
+1000000 simulations: 0m7.718s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+In Men's World Cup, Denmarks position changed drastically from just 10 to 100.
+Sweden changed quite a bit. But I guess it "stabilized" starting from a 1000. Brazil was a favorite in 1000 and below but that wasn't the case in every one of the higher simulations.
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?:
+I guess 10000, because even if 10, 100 and 1000 are basically the same time (favouring the case of 1000), there were discrepancies of almost 2 pp between 1000 and 10000.
+And 10000 is much closer to the higher simulations, sub 1 pp differences.
+Also, even if it costs 3x as much as the previous ones, it is as accurate as 10^5 and 10^6, and they start to cost much more.
+I'm from Brazil and didn't like that after 1000 in my simulations at least Brazil always loses to Belgium. Sour reminder of what actually happened that year.

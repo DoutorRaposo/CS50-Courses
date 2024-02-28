@@ -1,0 +1,8 @@
+__pycache__
+/nick/static/package.json
+/nick/static/babel.config.json
+/nick/static/package-lock.json
+/nick/static/node_modules
+jsconfig.json
+.env
+.vscode/

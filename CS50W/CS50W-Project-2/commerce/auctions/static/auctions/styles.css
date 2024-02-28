@@ -1,0 +1,190 @@
+body {
+  padding: 10px;
+}
+
+.item-wrapper, .add-comment-wrapper .comment-field, .comment {
+  padding: 10px 0px 10px 0px;
+  margin: 5px 0px 5px 0px;
+  border: 0.25px solid grey;
+  border-radius: 16px;
+  box-shadow: 2px 2px 1px grey;
+  display: flex;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.text-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25px;
+}
+.text-item a {
+  color: black;
+}
+.text-item h2 {
+  font-size: 1.75rem;
+}
+.text-item h4 {
+  font-size: 1.5rem;
+}
+.text-item h5 {
+  font-size: 1rem;
+}
+.text-item h6 {
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.image-container {
+  width: 15%;
+  padding: 10px;
+}
+
+.stretchy {
+  width: 100%;
+}
+
+.watchlist-button {
+  margin: 5px;
+}
+
+.button-basic, .add-comment-wrapper .comment-button, .listing-form .list-form-button, .close-button, .place-bid-button, .watchlist-button {
+  border-radius: 6px;
+  background-color: #4285F4;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.place-bid-button {
+  width: 80px;
+  margin-top: 10px;
+}
+
+.bid-field {
+  width: 500px;
+  padding: 7px 15px;
+  border-radius: 6px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 1px grey;
+}
+
+.bid-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.line {
+  width: 112px;
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+
+.details-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.listing-body {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-listing-container {
+  width: 25%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 15px 0px 15px 0px;
+}
+
+.comment {
+  width: 60%;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 10px 0px;
+}
+.comment h1 {
+  font-size: 1rem;
+}
+.comment h2 {
+  font-size: 0.65rem;
+}
+.comment p {
+  font-size: 1.25rem;
+}
+
+.comment-wrapper {
+  padding: 10px 0px 10px 0px;
+}
+
+.close-wrapper {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.close-wrapper input {
+  margin-left: 5px;
+}
+
+.listing-form form {
+  display: flex;
+  flex-direction: column;
+}
+.listing-form .list-form-button {
+  margin-top: 10px;
+  align-self: center;
+  width: 10%;
+}
+.listing-form input {
+  padding: 15px;
+  margin: 5px 0px 5px 0px;
+  border: 0.25px solid grey;
+  border-radius: 16px;
+  box-shadow: 2px 2px 1px grey;
+}
+.listing-form select {
+  padding: 15px;
+  margin: 5px 0px 5px 0px;
+  border: 0.25px solid grey;
+  border-radius: 16px;
+  box-shadow: 2px 2px 1px grey;
+}
+
+.add-comment-wrapper {
+  width: 60%;
+  display: flex;
+}
+.add-comment-wrapper form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.add-comment-wrapper .comment-button {
+  align-self: center;
+}
+.add-comment-wrapper .comment-field {
+  width: 100%;
+  padding: 15px 15px 15px 15px;
+  height: 100px;
+}
+
+.message {
+  color: red;
+  font-size: large;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */

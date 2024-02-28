@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+<div class="spacing">>
+    <div id="searchbox">
+        <div class="intro_text">
+            <h3 class="intro_text"> Welcome to Poster Scraper!</h3>
+            <p>Search for your favorite cinema artist and see all the posters
+                for their, be it as director, producer or actor! </p>
+        </div>
+        <div class="spacing_inside"></div>
+        <form action="/search" method="get">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="artist" name="q"
+                    placeholder="Search for artist" type="text" required>
+            </div>
+            <button class="btn btn-primary" type="search">Search</button>
+        </form>
+    </div>
+</div {% endblock %}

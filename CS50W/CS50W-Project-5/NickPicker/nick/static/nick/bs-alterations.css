@@ -1,0 +1,221 @@
+/* Editings to bootstrap navbar */
+
+/*
+Changes to dropdown menu when navbar isn't collapsed
+*/
+
+.navbar.navbar-expand-lg.navbar-dark .collapse.navbar-collapse .navbar-nav.ms-auto.mb-lg-0 .dropdown-menu.custom.show {
+    @media only screen and (min-width: 992px) {
+        background-color: rgba(49, 49, 49, 0.75);
+    }
+
+    .dropdown-item {
+        color: white;
+        text-transform: none;
+    }
+
+    .dropdown-item:hover {
+        color: black;
+        text-transform: none;
+    }
+
+
+}
+
+/* Margins and background color for whole nav */
+.navbar.navbar-expand-lg {
+    padding: 1.5rem 0;
+    background-color: rgba(49, 49, 49, 0.75);
+    border-color: white;
+    border-bottom: 1px solid white;
+    box-shadow: 0 0 10px 2px #909090;
+    min-height: 8vh;
+    text-transform: uppercase;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.navbar>.container-fluid {
+    margin: 0 2rem;
+}
+
+
+/* Changing font from navbar */
+.navbar-dark .navbar-text {
+    color: white !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+}
+
+@media only screen and (max-width: 990px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Changes to the genre dropdown only on collapsed navbar */
+.navbar-collapse.collapse.show .dropdown-menu.custom {
+    background-color: transparent;
+    padding: .25rem 0rem;
+
+    .dropdown-item {
+        color: white;
+        font-size: smaller;
+        padding: 0.5rem 2rem;
+
+    }
+
+    a:hover {
+        background-color: transparent;
+    }
+
+    li:first-child {
+        border-top: 1px solid white;
+    }
+
+    & li:not(:last-child) {
+        border-color: white;
+        border-bottom: 1px solid white;
+    }
+}
+
+@media only screen and (max-width: 993px) {
+    .navbar-collapse.collapse.show .dropdown-menu.custom {
+        background-color: transparent;
+        padding: .25rem 0rem;
+
+        .dropdown-item {
+            color: white;
+            font-size: 1.25rem;
+            padding: 0.5rem 2rem;
+        }
+
+        a:hover {
+            background-color: white;
+        }
+
+        li:first-child {
+            border-top: 2px solid white;
+        }
+
+        & li:not(:last-child) {
+            border-color: white;
+            border-bottom: 2px solid white;
+        }
+    }
+}
+
+/* Both of these change the animation */
+div>.navbar-collapse.collapse.show {
+
+    .nav-item {
+        border-color: white;
+        border-bottom: 2px solid white;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+}
+
+
+
+div>.navbar-collapse.collapsing {
+
+    .nav-item {
+        border-color: white;
+        border-bottom: 2px solid white;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 993px) {
+    div>.navbar-collapse.collapse.show {
+
+        .nav-item {
+            border-color: white;
+            border-bottom: 4px solid white;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    }
+
+
+
+    div>.navbar-collapse.collapsing {
+
+        .nav-item {
+            border-color: white;
+            border-bottom: 4px solid white;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    }
+}
+
+/* Changing the button */
+.navbar-toggler {
+    border-color: white !important;
+}
+
+/* Change to the pagination bootstrap */
+.pagination .page-item.active .page-link {
+
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.pagination .page-item .page-link {
+
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+ul.pagination {
+    flex-wrap: wrap;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+/* Search bar*/
+
+.btn.btn-outline-success {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+.btn.btn-outline-success:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+.form-control.me-2:focus {
+    box-shadow: 0 0 10px 2px #909090;
+}
+
+
+
+a.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+{% if user.is_authenticated %} 
+<div class="listing-form">
+<form action="" method="post">
+    {{ ListingForm }} 
+    {% csrf_token %}
+    <input type="submit" class="list-form-button" value="Submit">
+</form>
+</div>
+
+{% endif %}
+
+{% endblock %}

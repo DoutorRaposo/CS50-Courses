@@ -1,0 +1,18 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block script %}
+<script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
+<script src="{% static 'network/script.js' %}"></script>
+{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+    <div class="compose-view">
+        <h3>New Post</h3>
+        <form id="compose-form">
+            <textarea class="form-control" id="compose-body" placeholder="What's on your mind?"></textarea>
+            <input type="submit" id="compose-btn" class="btn btn-primary"/>
+        </form>
+    </div>
+{% endif %}
+</div>
+{% endblock %}

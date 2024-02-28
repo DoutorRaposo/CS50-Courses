@@ -1,0 +1,41 @@
+textarea {
+    min-height: 400px;
+}
+
+.email-div {
+    border: 0px solid black;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 5px 10px 5px 15px;
+    box-shadow: 1px 1px 2px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.read {
+    background-color: lightgray;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.subject {
+    margin: 0px 10px 0px 10px;
+}
+
+.timestamp {
+    margin-left: auto;
+    font-size: smaller;
+    color: gray;
+}
+
+.bold-content {
+    font-weight: bold;
+}
+
+#archive_button {
+    margin-left: 10px;
+}

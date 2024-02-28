@@ -1,0 +1,34 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if not watchlist %}
+<h2>
+    Active Listings 
+    {%if in_category %} {%if in_category != "no_category" %} in {{ in_category }} {%else%} without category {% endif %}
+    {%endif%}
+</h2>
+{% else %}
+<h2>Watchlist</h2> 
+{% endif %}
+<div class="list-wrapper">
+    {% for listing in listings %}
+    {% if listing.active or watchlist %}
+    <div class="item-wrapper">
+        {%if listing.image %}<div class="image-container"><img src={{ listing.image }} class="stretchy"></div> {% endif %}
+        <div class="text-item">
+            <h2><a href="{% url 'listing' listing.slug %}">{{listing}} </a></h2>
+            <h4> Price:
+                {% if listing.current_bid.value != None %}
+                ${{ listing.current_bid.value }}
+                {% else %}
+                ${{ listing.initial_bid }}
+                {% endif %} 
+            </h4>
+            <h5>{{listing.description}}</h5>
+            <h6> Created on: {{listing.created_on}} by {{listing.vendor}} </h6>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

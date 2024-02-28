@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Error {{ error_code }}
+{% endblock %}
+
+{% block body %}
+
+{% if error_code == "404" %}
+<h1>Error: 404 - Not found</h1>
+
+Your result for {{ title_page }} was not found.
+
+{% elif error_code == "418" %}
+
+<h1>Entry already exists</h1>
+
+Your entry already exists in our archives. Perhaps you should try editing the entry?
+{% endif %}
+
+{% endblock %}
